@@ -48,8 +48,7 @@ export class DataTypeMap {
   }
 
   determine(value: any): OID {
-    if (value == null)
-      return DataTypeOIDs.unknown;
+    if (value == null) return DataTypeOIDs.unknown;
     const valueIsArray = Array.isArray(value);
     let i: number;
     let t: DataType;
@@ -85,33 +84,33 @@ GlobalTypeMap.register([BoxType, ArrayBoxType]);
 
 GlobalTypeMap.register([Int2VectorType, ArrayInt2VectorType]);
 
-GlobalTypeMap.register({...VarcharType, name: "bpchar", oid: DataTypeOIDs.bpchar});
+GlobalTypeMap.register({ ...VarcharType, name: 'bpchar', oid: DataTypeOIDs.bpchar });
 GlobalTypeMap.register({
   ...ArrayVarcharType,
-  name: "_bpchar",
+  name: '_bpchar',
   oid: DataTypeOIDs._bpchar,
   elementsOID: DataTypeOIDs.bpchar,
 });
 
-GlobalTypeMap.register({...VarcharType, name: "name", oid: DataTypeOIDs.name});
+GlobalTypeMap.register({ ...VarcharType, name: 'name', oid: DataTypeOIDs.name });
 GlobalTypeMap.register({
   ...ArrayVarcharType,
-  name: "_name",
+  name: '_name',
   oid: DataTypeOIDs._name,
   elementsOID: DataTypeOIDs.name,
 });
 
-GlobalTypeMap.register({...VarcharType, name: "text", oid: DataTypeOIDs.text});
+GlobalTypeMap.register({ ...VarcharType, name: 'text', oid: DataTypeOIDs.text });
 GlobalTypeMap.register({
   ...ArrayVarcharType,
-  name: "_text",
+  name: '_text',
   oid: DataTypeOIDs._text,
   elementsOID: DataTypeOIDs.text,
 });
-GlobalTypeMap.register({...VarcharType, name: "xml", oid: DataTypeOIDs.xml});
+GlobalTypeMap.register({ ...VarcharType, name: 'xml', oid: DataTypeOIDs.xml });
 GlobalTypeMap.register({
   ...ArrayVarcharType,
-  name: "_xml",
+  name: '_xml',
   oid: DataTypeOIDs._xml,
   elementsOID: DataTypeOIDs.xml,
 });

@@ -1,7 +1,7 @@
 /** @type {import("prettier").Config} */
 const prettierConfig = {
-  editorconfig: true,
   singleQuote: true,
+  tabWidth: 2,
 };
 
 export default prettierConfig;

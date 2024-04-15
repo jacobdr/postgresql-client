@@ -62,7 +62,9 @@
     "cover": "jest --runInBand --detectOpenHandles --coverage",
     "precitest": "rimraf coverage",
     "citest": "jest --coverage --coverageReporters=lcov",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "format": "prettier --write --list-different .",
+    "format:check": "prettier --check ."
   },
   "type": "module",
   "main": "./cjs/index.js",

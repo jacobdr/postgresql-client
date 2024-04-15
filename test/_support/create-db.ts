@@ -1,8 +1,8 @@
 // noinspection GrazieInspection
 
-import { Connection, stringifyValueForSQL } from "postgresql-client";
+import { Connection, stringifyValueForSQL } from 'postgresql-client';
 
-const schema = process.env.PGSCHEMA || "test";
+const schema = process.env.PGSCHEMA || 'test';
 let testDbCreated = false;
 
 const schemaSql = `
@@ -91,9 +91,9 @@ values
 `;
 
 const dataFiles: any[] = [
-  require("./test-data/continents.json"),
-  require("./test-data/countries.json"),
-  require("./test-data/customers.json"),
+  require('./test-data/continents.json'),
+  require('./test-data/countries.json'),
+  require('./test-data/customers.json'),
 ];
 
 export async function createTestSchema(connection: Connection) {
@@ -105,11 +105,11 @@ export async function createTestSchema(connection: Connection) {
     /* Insert rows */
     const keys = Object.keys(table.rows[0]);
     const fields = keys.map((f) => f.toLowerCase());
-    let sql = "";
+    let sql = '';
     for (const row of table.rows) {
       const values = keys.map((x) => stringifyValueForSQL(row[x]));
       const insertSql =
-          "insert into test." + table.name + " (" + fields.join(",") + ") values (" + values.join(",") + ");\n";
+        'insert into test.' + table.name + ' (' + fields.join(',') + ') values (' + values.join(',') + ');\n';
       sql += insertSql;
     }
     await connection.execute(sql);
